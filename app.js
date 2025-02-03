@@ -3,27 +3,39 @@
 //Criando array que vai armazenar o valor dos amigos
 let names = [];
 
-function addFriend(valueNames) {
+function addName(valueName) {
     // Adiciona um amigo a lista de amigos. 
-    names.push(valueNames);
+    
+    names.push(valueName);
 }
 
-function sortFriends() {
+function sortNames() {
     // Seleciona um dos amigos da lista de forma aleatória.
+
     let selectedName = Math.floor(Math.random() * names.length);
     return names[selectedName];
 }
 
-function addFriendFromInput() {
+function addNameFromInput() {
     // Adiciona um amigo a lista a partir do campo de input. Checa se ele não está vazio.
-    let input = document.getElementById('friendInput'); 
+
+    let input = document.getElementById('nameInput'); 
     let name = input.value; 
     if (name) { 
-        addFriend(name);
+        addName(name);
         input.value = '';
+
+        displayName(name);
     } else {
         alert("Please, insert a name!");
     }
 }
 
- 
+function displayName(name){
+    // Adiciona o nome do amigo na lista de amigos na tela.
+
+    let catchList = document.getElementById('nameList');
+    let liName = document.createElement('li');
+    liName.textContent = name;
+    catchList.appendChild(liName);
+}
