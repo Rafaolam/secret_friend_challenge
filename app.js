@@ -53,9 +53,10 @@ function displaySelectedName() {
        alert("Por favor, insira um nome.");
        catchListOfNames.innerHTML = ''; // Limpa a lista de amigos
        catchSelectedName.innerHTML = '';
-
-   } else {
+       
     // Caso a lista de amigos não esteja vazia, ele sorteia um nome e exibe na tela.
+   } else {
+    
 
     catchListOfNames.innerHTML = '';
     catchSelectedName.innerHTML = '';  // Limpa o nome selecionado.

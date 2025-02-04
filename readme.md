@@ -1,5 +1,5 @@
 <h1 align="center"> Projeto do amigo secreto</h1>
-<p>Esse projeto tem a funcionalidade de sortear um nome de amigo dentre a lista de amigos que serão inseridos pelo usuário, para que o sorteado seja defiido como o amigo secreto do usuário.</p>
+<p>Esse projeto tem a funcionalidade de sortear um nome de amigo dentre a lista de amigos que serão inseridos pelo usuário, para que o sorteado seja definido como o amigo secreto do usuário.</p>
 
 # :hammer: Funcionalidades do projeto
 ![Demonstração](assets/gif_demo.gif)
