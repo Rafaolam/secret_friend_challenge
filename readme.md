@@ -6,4 +6,4 @@
 
 - <p>O usuário pode inserir nomes, um por vez, para entrarem em uma lista.<p>
 - <p>Após inserir todos os nomes desejados, o usuário pode clicar em sortear amigo, onde será escolhido, de forma aleatória, um dos nomes da lista e exibido em tela.</p>
--<p>Existem validações na tela para que o usuário não insira um valor vazio para sorteio.</p>
+- <p>Existem validações na tela para que o usuário não insira um valor vazio para sorteio.</p>
