@@ -5,7 +5,7 @@ let names = [];
 
 function addName(valueName) {
     // Adiciona um amigo a lista de amigos. 
-    
+
     names.push(valueName);
 }
 
@@ -38,4 +38,17 @@ function displayName(name){
     let liName = document.createElement('li');
     liName.textContent = name;
     catchList.appendChild(liName);
+}
+
+function displaySelectedName() {
+    // Adiciona o nome do amigo selecionado na tela.
+    
+    document.getElementById('nameList').innerHTML = '';
+    let catchSelectedName = document.getElementById('sortedName');  
+    catchSelectedName.innerHTML = '';  
+    let liSelectedName = document.createElement('li');
+    liSelectedName.textContent = sortNames();
+    catchSelectedName.appendChild(liSelectedName);
+    
+    
 }
