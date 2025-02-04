@@ -17,7 +17,7 @@ function sortNames() {
 }
 
 function addNameFromInput() {
-    // Adiciona um amigo a lista a partir do campo de input. Checa se ele não está vazio.
+    // Adiciona um amigo a lista a partir do campo de input. Checa se ele está vazio.
 
     let input = document.getElementById('nameInput'); 
     let name = input.value;
@@ -45,17 +45,20 @@ function displaySelectedName() {
 
     let catchSelectedName = document.getElementById('sortedName');
     let liSelectedName = document.createElement('li');
+    let catchListOfNames = document.getElementById('nameList');
 
+    // Checa se a lista de amigos está vazia.
    if (names.length === 0) {
 
        alert("Please, insert a name!");
-       document.getElementById('nameList').innerHTML = '' // Limpa a lista de amigos
+       catchListOfNames.innerHTML = '' // Limpa a lista de amigos
        catchSelectedName.innerHTML = '';
 
    } else {
+    // Caso a lista de amigos não esteja vazia, ele sorteia um nome e exibe na tela.
 
-    document.getElementById('nameList').innerHTML = ''
-    catchSelectedName.innerHTML = '';  // Limpa o nome selecionado
+    catchListOfNames.innerHTML = ''
+    catchSelectedName.innerHTML = '';  // Limpa o nome selecionado.
     liSelectedName.textContent = `The secret friend picked is: ${sortNames()}`;
     catchSelectedName.appendChild(liSelectedName);
     names = []; // Serve para limpar o array e caso ele clique em novo sorteio não gerar outro nome a menos que digite novas opções.
@@ -63,7 +66,7 @@ function displaySelectedName() {
 }
 
 function changeAddButtonColor(){
-    // Muda a cor do botão de adicionar amigo.
+    // Muda a cor do botão de adicionar amigo. Não esteja no projeto mas pensei em adicionar para melhorar a experiência do usuário.
 
     let input = document.getElementById('nameInput');
     let button = document.querySelector('.button-add');
@@ -75,5 +78,6 @@ function changeAddButtonColor(){
     }
 }
 
+// Chamando a função de mudar a cor do botão de adicionar amigo.
 let input = document.getElementById('nameInput');
 input.addEventListener('input', changeAddButtonColor);
