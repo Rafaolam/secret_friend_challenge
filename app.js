@@ -27,7 +27,7 @@ function addNameFromInput() {
         changeAddButtonColor();
         displayName(name);
     } else {
-        alert("Please, insert a name!");
+        alert("Por favor, insira um nome válido.");
     }
 }
 
@@ -50,19 +50,19 @@ function displaySelectedName() {
     // Checa se a lista de amigos está vazia.
    if (names.length === 0) {
 
-       alert("Please, insert a name!");
-       catchListOfNames.innerHTML = '' // Limpa a lista de amigos
+       alert("Por favor, insira um nome.");
+       catchListOfNames.innerHTML = ''; // Limpa a lista de amigos
        catchSelectedName.innerHTML = '';
 
    } else {
     // Caso a lista de amigos não esteja vazia, ele sorteia um nome e exibe na tela.
 
-    catchListOfNames.innerHTML = ''
+    catchListOfNames.innerHTML = '';
     catchSelectedName.innerHTML = '';  // Limpa o nome selecionado.
-    liSelectedName.textContent = `The secret friend picked is: ${sortNames()}`;
+    liSelectedName.textContent = `O amigo secreto sorteado é: ${sortNames()}`;
     catchSelectedName.appendChild(liSelectedName);
     names = []; // Serve para limpar o array e caso ele clique em novo sorteio não gerar outro nome a menos que digite novas opções.
-     }
+    }
 }
 
 function changeAddButtonColor(){
