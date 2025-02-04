@@ -20,11 +20,11 @@ function addNameFromInput() {
     // Adiciona um amigo a lista a partir do campo de input. Checa se ele não está vazio.
 
     let input = document.getElementById('nameInput'); 
-    let name = input.value; 
+    let name = input.value;
+    input.value = ''; 
     if (name) { 
         addName(name);
-        input.value = '';
-
+        changeAddButtonColor();
         displayName(name);
     } else {
         alert("Please, insert a name!");
@@ -42,13 +42,38 @@ function displayName(name){
 
 function displaySelectedName() {
     // Adiciona o nome do amigo selecionado na tela.
-    
-    document.getElementById('nameList').innerHTML = '';
-    let catchSelectedName = document.getElementById('sortedName');  
-    catchSelectedName.innerHTML = '';  
+
+    let catchSelectedName = document.getElementById('sortedName');
     let liSelectedName = document.createElement('li');
-    liSelectedName.textContent = sortNames();
+
+   if (names.length === 0) {
+
+       alert("Please, insert a name!");
+       document.getElementById('nameList').innerHTML = '' // Limpa a lista de amigos
+       catchSelectedName.innerHTML = '';
+
+   } else {
+
+    document.getElementById('nameList').innerHTML = ''
+    catchSelectedName.innerHTML = '';  // Limpa o nome selecionado
+    liSelectedName.textContent = `The secret friend picked is: ${sortNames()}`;
     catchSelectedName.appendChild(liSelectedName);
-    
-    
+    names = []; // Serve para limpar o array e caso ele clique em novo sorteio não gerar outro nome a menos que digite novas opções.
+     }
 }
+
+function changeAddButtonColor(){
+    // Muda a cor do botão de adicionar amigo.
+
+    let input = document.getElementById('nameInput');
+    let button = document.querySelector('.button-add');
+    
+    if (input.value.trim() !== ""){
+        button.style.backgroundColor = "#fe652b";
+    } else {
+        button.style.backgroundColor = "#C4C4C4";
+    }
+}
+
+let input = document.getElementById('nameInput');
+input.addEventListener('input', changeAddButtonColor);
